@@ -1,6 +1,7 @@
 # logstash-es-multi-node-kibana
 
 -------pre-requisites--------------------------------------------------
+
 apt-get install docker.io -y 
 apt-get install jq -y 
 #sudo rm /usr/local/bin/docker-compose
