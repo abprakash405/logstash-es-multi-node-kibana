@@ -28,30 +28,10 @@ source ~/.bashrc
 
 sysctl -w vm.max_map_count=262144
 
-vi docker-compose.yml 
-
-mkdir elasticsearch 
-
-cd elasticsearch
-
-chmod 777 -R *
-
-cd .. 
-
 
 dc up -d 
 
-mkdir logstash 
-
-mkdir logstash/config 
-
-chmod 777 -R logstash/* 
-
-
-dc down 
-rm -rf elasticsearch/esdata*/*
-
-dc up -d 
+--------------
 
 install filebeat and set the filebeat.yml as config
 
@@ -65,3 +45,17 @@ sudo dpkg -i filebeat-7.4.2-amd64.deb
 vi /etc/filebeat/filebeat.yml 
 
 enabled: true 
+
+--------------
+
+service filebeat start
+
+service filebeat start
+
+#if you want to down the stack and restart follow below steps
+
+dc down 
+
+rm -rf elasticsearch/esdata*/*
+
+dc up -d 
