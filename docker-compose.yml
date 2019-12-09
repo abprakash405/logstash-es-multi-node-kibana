@@ -427,9 +427,7 @@ services:
     container_name: logstash
     restart: unless-stopped
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - ./logstash/config/logstash.conf:/etc/logstash/conf.d/logstash.conf:ro
+      - ./logstash/config/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
       - ./logstash/patterns/grok-patterns:/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-patterns-core-4.1.2/patterns/grok-patterns:ro
     ports:
       - "5505:5505"

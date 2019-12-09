@@ -34,3 +34,13 @@ chmod 777 -R logstash/*
 dc down 
 rm -rf elasticsearch/esdata*/*
 dc up -d 
+
+install filebeat and set the filebeat.yml as config
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.2.0-amd64.deb
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.2-amd64.deb
+sudo dpkg -i filebeat-7.2.0-amd64.deb
+sudo dpkg -i filebeat-7.4.2-amd64.deb
+
+
+vi /etc/filebeat/filebeat.yml 
+enabled: true 
